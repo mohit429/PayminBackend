@@ -95,7 +95,7 @@ const updateBody = zod.object({
 })
 
 // Bulk route
-router.get("/bulk",authMiddleware, async (req, res) => {
+router.get("/bulk", async (req, res) => {
     const filter = req.query.filter || "";
     const { userId } = req.query;
     const users = await User.find({
@@ -122,7 +122,7 @@ router.get("/bulk",authMiddleware, async (req, res) => {
 
 //onendonly
 
-router.get("/onendonly",authMiddleware, async (req, res) => {
+router.get("/onendonly", async (req, res) => {
     try {
         const { username } = req.query;
         const user = await User.findOne({
